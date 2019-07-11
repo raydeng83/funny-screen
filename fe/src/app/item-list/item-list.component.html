@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-11"><select class="custom-select" size="10" [(ngModel)]="selectedOption">
+            <option *ngFor="let option of optionList" [value]="option">{{option}}</option>
+        </select></div>
+    <div class="col-1">
+        <button class="btn btn-light" style="margin-top: 50px;" (click)="moveUpOption()">Up</button>
+        <button class="btn btn-light" style="margin-top: 50px;" (click)="moveDownOption()">Down</button>
+    </div>
+</div>
+
+<br><br>
+
+<div class="row">
+    <div class="col-5">
+        <div class="form-group">
+            <input type="url" class="form-control" id="new-option" aria-describedby="emailHelp"
+                placeholder="Add a new url" [(ngModel)]="newUrl">
+        </div>
+    </div>
+    <div class="col-2">
+        <button class="btn btn-light btn-block" (click)="addOption()">Add URL</button>
+    </div>
+    <div class="col-1">
+        <button class="btn btn-light btn-block" (click)="setPlayInterval(newInterval)">Set</button>
+    </div>
+    <div class="col-2">
+        <input type="text" class="form-control mb-2 mr-sm-2" id="interval" placeholder="Set Interval"
+            [(ngModel)]="newInterval">
+        <small>current interval: {{playInterval }}s</small>
+    </div>
+    <div class="col-2">
+        <button class="btn btn-light btn-block" (click)="removeOption()">Delete URL</button>
+    </div>
+</div>
+<br>
+<button class="btn btn-dark btn-lg btn-block" (click)="navigate()">Launch</button>
