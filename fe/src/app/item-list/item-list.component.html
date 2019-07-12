@@ -3,8 +3,9 @@
             <option *ngFor="let option of optionList" [value]="option">{{option}}</option>
         </select></div>
     <div class="col-1">
-        <button class="btn btn-light" style="margin-top: 50px;" (click)="moveUpOption()">Up</button>
-        <button class="btn btn-light" style="margin-top: 50px;" (click)="moveDownOption()">Down</button>
+        <button class="btn btn-light" style="margin-top: 30px;" (click)="moveUpOption()">Up</button>
+        <button class="btn btn-light" style="margin-top: 30px;" (click)="removeOption()">Delete</button>
+        <button class="btn btn-light" style="margin-top: 30px;" (click)="moveDownOption()">Down</button>
     </div>
 </div>
 
@@ -26,10 +27,17 @@
     <div class="col-2">
         <input type="text" class="form-control mb-2 mr-sm-2" id="interval" placeholder="Set Interval"
             [(ngModel)]="newInterval">
-        <small>current interval: {{playInterval }}s</small>
     </div>
     <div class="col-2">
-        <button class="btn btn-light btn-block" (click)="removeOption()">Delete URL</button>
+            <p>current interval: {{playInterval }}s</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-light btn-block" (click)="setItemList()">Save List</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-light btn-block" (click)="getItemList()">Load list</button>
     </div>
 </div>
 <br>

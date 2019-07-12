@@ -21,4 +21,16 @@ public class PageItemServiceImpl implements PageItemService
     public List<PageItem> findAllPageItems() {
         return pageItemRepository.findAll();
     }
+
+    public void savePageItems(List<PageItem> pageItemList){
+        List<PageItem> currentPageItemList = pageItemRepository.findAll();
+        for (PageItem item : currentPageItemList) {
+            pageItemRepository.delete(item);
+        }
+
+        for (PageItem item : pageItemList) {
+            pageItemRepository.save(item);
+        }
+
+    }
 }

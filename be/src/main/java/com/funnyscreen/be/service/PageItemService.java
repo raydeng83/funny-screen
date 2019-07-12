@@ -7,4 +7,6 @@ import java.util.List;
 public interface PageItemService {
 
     List<PageItem> findAllPageItems();
+
+    void savePageItems(List<PageItem> pageItemList);
 }
